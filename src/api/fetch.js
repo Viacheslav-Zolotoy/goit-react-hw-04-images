@@ -7,6 +7,10 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 export async function fetchImg(typeValue, page) {
     try {
+        if (!typeValue) {
+            return;
+        }
+
         const response = await axios.get('', {
             params: {
                 key: '36865629-a181ba7c52348470e5fc378ab',
